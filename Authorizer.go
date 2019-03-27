@@ -3,10 +3,22 @@ package main
 import (
 	"errors"
 	"github.com/auth0/go-jwt-middleware"
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/dgrijalva/jwt-go"
 )
 
+func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+
+	return events.APIGatewayProxyResponse{
+		Body:       "Hello, World!",
+		StatusCode: 200,
+	}, nil
+}
+
 func main() {
+
+	lambda.Start(handler)
 
 	jwtMiddleware := jwtmiddleware.New(jwtmiddleware.Options{
 		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {

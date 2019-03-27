@@ -1,8 +1,10 @@
-hash: bfe64814f42331f38dfa44da67023cf09f29f873f46f0e37fd3ffb5fb826e9ad
-updated: 2019-03-27T17:06:47.7822652+11:00
+hash: b818ea8dc89a50e16df3da0aad9d6843615abca0f9d52324e9ab6fc7fd68522a
+updated: 2019-03-27T17:17:26.1907185+11:00
 imports:
 - name: github.com/auth0/go-jwt-middleware
   version: 5493cabe49f7bfa6e2ec444a09d334d90cd4e2bd
+- name: github.com/aws/aws-sdk-go
+  version: bae168494294b48b3fc9d6722a711246a8543034
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
 testImports: []
