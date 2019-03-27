@@ -1,10 +1,36 @@
-hash: b818ea8dc89a50e16df3da0aad9d6843615abca0f9d52324e9ab6fc7fd68522a
-updated: 2019-03-27T17:17:26.1907185+11:00
+hash: bfe09f7318e45a401b58b3d8169b2bbd8dab2915e40040bb9cb397048ec3a41c
+updated: 2019-03-27T21:18:06.481123496+11:00
 imports:
+- name: github.com/auth0-community/auth0
+  version: ddfdc88aaa5909a3d4e3ad0543a27f4a63a691e6
 - name: github.com/auth0/go-jwt-middleware
   version: 5493cabe49f7bfa6e2ec444a09d334d90cd4e2bd
+- name: github.com/aws/aws-lambda-go
+  version: 08d251dc58f204411d79012fd6f1beefb7107fea
+  subpackages:
+  - events
+  - lambda
+  - lambda/handlertrace
+  - lambda/messages
+  - lambdacontext
 - name: github.com/aws/aws-sdk-go
   version: bae168494294b48b3fc9d6722a711246a8543034
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/pkg/errors
+  version: 27936f6d90f9c8e1145f11ed52ffffbfdb9e0af7
+- name: golang.org/x/crypto
+  version: a5d413f7728c81fb97d96a2b722368945f651e78
+  subpackages:
+  - ed25519
+  - ed25519/internal/edwards25519
+  - pbkdf2
+- name: golang.org/x/oauth2
+  version: c85d3e98c914e3a33234ad863dcbff5dbc425bb8
+- name: gopkg.in/square/go-jose.v2
+  version: 628223f44a71f715d2881ea69afc795a1e9c01be
+  subpackages:
+  - cipher
+  - json
+  - jwt
 testImports: []
