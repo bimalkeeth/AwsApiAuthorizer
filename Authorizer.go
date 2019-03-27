@@ -2,11 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/auth0-community/go-auth0"
 	"github.com/auth0/go-jwt-middleware"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/pkg/errors"
+	"gopkg.in/square/go-jose.v2"
+	"os"
 	"strings"
 )
 
@@ -70,6 +73,13 @@ func main() {
 		return []byte("secret"), nil
 	})
 	println(token)
+
+	client := auth0.NewJWKClient(auth0.JWKClientOptions{URI: "https://mydomain.eu.auth0.com/.well-known/jwks.json"}, nil)
+	audience := os.Getenv("AUTH0_CLIENT_ID")
+	configuration := auth0.NewConfiguration(client, []string{audience}, "https://mydomain.eu.auth0.com/", jose.RS256)
+	validator := auth0.NewValidator(configuration, nil)
+
+	token2, err := validator.ValidateRequest(token)
 
 	lambda.Start(handler)
 }
