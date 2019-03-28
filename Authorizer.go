@@ -57,9 +57,9 @@ func handler(request events.APIGatewayCustomAuthorizerRequest) (events.APIGatewa
 			SigningMethod: jwt.SigningMethodRS256,
 		})
 		ww := &contracts.Response{}
-		response := error(jwtMiddleware.CheckJWT(ww, req))
-		if response != nil {
-
+		errResponse := error(jwtMiddleware.CheckJWT(ww, req))
+		if errResponse != nil {
+			return responseRequest, errResponse
 		}
 		responseRequest.PolicyDocument = events.APIGatewayCustomAuthorizerPolicy{}
 	} else {
